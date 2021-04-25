@@ -8,7 +8,7 @@ def nothing(x):
 
 
 # mulai video capture
-cap = cv2.VideoCapture(0);
+cap = cv2.VideoCapture(1);
 
 # setting resolusi video
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
