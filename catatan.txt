@@ -1,0 +1,4 @@
+operasi dilasi
+operasi erosi
+operasi opening
+operasi closing
