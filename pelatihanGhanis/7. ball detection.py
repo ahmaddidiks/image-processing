@@ -69,7 +69,7 @@ while True:
 
     edges = cv2.Canny(hsvThresh, 0, 0)
 
-    _, contours, _= cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)[:5] #kontur ada 5
     if len(contours) > 0:
         intRadius = 0

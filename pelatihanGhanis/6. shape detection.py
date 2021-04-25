@@ -79,7 +79,7 @@ while True:
 
     edges = cv2.Canny(hsvThresh, 0, 0)
 
-    _, contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     if len(contours) > 1:
         for c in contours:  #ada banyak kontur, maka digunakan perulangan

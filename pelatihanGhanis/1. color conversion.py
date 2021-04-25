@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # load gambar
-bgr_image = cv2.imread('./gambar/undip.jpg')
+bgr_image = cv2.imread('/home/didik/image-processing/pelatihanGhanis/gambar/undip.jpg')
 
 # ubah ke hsv
 hsv_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2HSV)

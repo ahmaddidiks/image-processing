@@ -7,6 +7,8 @@ cap = cv2.VideoCapture(0);
 # setting resolusi video
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+# ID number ten for brightness
+cap.set(10, 70)
 
 # Ambil gambar terus menerus sampai selesai
 while True:

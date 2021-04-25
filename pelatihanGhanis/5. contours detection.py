@@ -1,14 +1,12 @@
 import cv2
 import numpy as np
 
-
 def nothing(x):
     pass
 
-
 cap = cv2.VideoCapture(0);
 
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 cv2.namedWindow('Canny');
@@ -29,7 +27,7 @@ while True:
 
     canny = cv2.Canny(bgr_image, thresh1, thresh2)
     
-    _, contours, _ = cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     cv2.drawContours(bgr_image, contours, -1, (255,15,20), 1) #formatnya BGR
 

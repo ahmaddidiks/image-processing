@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 
 # detector wajah dan mata
-deteksi_wajah = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
-deteksi_mata = cv2.CascadeClassifier('haarcascades/haarcascade_eye.xml')
+deteksi_wajah = cv2.CascadeClassifier('/home/didik/image-processing/pelatihanGhanis/haarcascades/haarcascade_frontalface_default.xml')
+deteksi_mata = cv2.CascadeClassifier('/home/didik/image-processing/pelatihanGhanis/haarcascades/haarcascade_eye.xml')
 
 cap = cv2.VideoCapture(0)
 
