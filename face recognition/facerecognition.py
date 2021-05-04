@@ -114,7 +114,7 @@ print(confusion_matrix(y_test, y_predict, labels=range(n_classes)))
 #Prediction of user based on the model
 
 test = []
-test_image = "/home/didik/image-processing/face recognition/dataset/Tiger_Woods/Tiger_Woods_0002.jpg"
+test_image = "/home/didik/image-processing/face recognition/dataset/Didik/Didik-0.jpg"
 test_image = cv.imread(test_image)[data_slice[0]:data_slice[1], data_slice[2]:data_slice[3]]
 test_image = cv.resize(test_image, (width,height))
 test_image = cv.cvtColor(test_image, cv.COLOR_BGR2GRAY)
@@ -142,7 +142,8 @@ for file in os.listdir(path_data_set):
     print(f"Predicted Name : {target_names[test_image_predict[0]]}\n")
 
 face_cascade = cv.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
-cap = cv.VideoCapture(0)
+cap = cv.VideoCapture('http://192.168.1.16:4747/mjpegfeed')
+#cap = cv.VideoCapture(0)
 cap.set(cv.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
 while(True):
@@ -150,7 +151,7 @@ while(True):
     test = []
     face = []
     ret, frame = cap.read()
-    print(type(frame))
+    #print(type(frame))
     xv, yv, vc = frame.shape
     if (ret):
         
@@ -185,10 +186,10 @@ while(True):
             #print label name on image
             cv.putText(frame, "Name : " + target_names[test_image_predict[0]], (x + x//10, y+hf+20), cv.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,255),1)
 
-        cv.imshow('frame',frame)
+        cv.imshow('Face Recognition Didik',frame)
 
-        if cv.waitkey(1) & 0xFF == ord('q'):
+        if cv.waitKey(1) & 0xFF == ord(' '):
             break
-
-cap.realease()
+    
+cap.release()
 cv.destroyAllWindows()
